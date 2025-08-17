@@ -5,9 +5,14 @@ use App\Models\User;
 
 class UserController {
     function index(){
-        $user = new User();
-        $users = $user->all();
-        require __DIR__.'/../views/users/index.php';
+    $user = new User();
+    $users = $user->all();
+    
+    $data = ['users' => $users]; // نمرر البيانات كمصفوفة
+    extract($data); // تحويل المفاتيح إلى متغيرات
+    
+    require __DIR__.'/../Views/users/index.php';
+        // require 'App/Views/users/index.php';
     }
 
     function create(){

@@ -18,7 +18,8 @@
         </tr>
     </thead>
     <tbody>
-        <?php foreach ($books as $book): ?>
+    <?php foreach($books as $book): ?>
+    <li><?php echo $book['title']; ?> - <?php echo $book['author']; ?></li>
         <tr>
             <td><?= htmlspecialchars($book['id']) ?></td>
             <td><?= htmlspecialchars($book['title']) ?></td>

@@ -2,6 +2,7 @@
 <a href="/users/create">Add User</a>
 <table border="1" cellpadding="5">
     <tr><th>Name</th><th>Email</th><th>Actions</th></tr>
+    <?php if (!empty($books) && is_array($books)): ?>
     <?php foreach($users as $u): ?>
     <tr>
         <td><?= htmlspecialchars($u['name']) ?></td>

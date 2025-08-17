@@ -1,5 +1,7 @@
 <?php
-require __DIR__.'/../vendor/autoload.php';
+require __DIR__.'/../autoload.php';
+// var_dump(class_exists("App\Core\Router"));
+require __DIR__ . '/../Core/Router.php';
 
 use App\Core\Router;
 

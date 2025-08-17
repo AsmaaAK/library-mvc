@@ -1,8 +1,9 @@
 <?php
 namespace App\Core;
 
-final class Router
+class Router
 {
+
     private array $routes = ['GET' => [], 'POST' => []];
 
     public function get(string $path, $handler): void  

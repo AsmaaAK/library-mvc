@@ -7,11 +7,11 @@ class BookController {
     function index(){
         $book = new Book();
         $books = $book->all();
-        require __DIR__.'/../views/books/index.php';
+        require __DIR__.'/../Views/books/index.php';
     }
 
     function create(){
-        require __DIR__.'/../views/books/create.php';
+        require __DIR__.'/../Views/books/create.php';
     }
 
     function store(){
