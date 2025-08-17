@@ -1,6 +1,5 @@
 <?php
 spl_autoload_register(function($class){
-   
     $prefix = 'App\\';
     if(strncmp($class, $prefix, strlen($prefix)) !== 0){
         return;

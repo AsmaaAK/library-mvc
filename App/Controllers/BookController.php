@@ -2,11 +2,13 @@
 namespace App\Controllers;
 
 use App\Models\Book;
-
 class BookController {
     function index(){
-        $book = new Book();
-        $books = $book->all();
+    $book = new Book();
+    $books = $book->all();
+    
+    $data = ['books' => $books]; 
+    extract($data); 
         require __DIR__.'/../Views/books/index.php';
     }
 
@@ -29,12 +31,15 @@ class BookController {
     function update(){
         $book = new Book();
         $book->update($_POST['id'],$_POST['title'],$_POST['author'],$_POST['copies']);
-        $this->index();
+        
+    header("Location: /library-mvc/books");
+    exit;
     }
 
     function delete(){
         $book = new Book();
         $book->delete($_POST['id']);
-        $this->index();
+          header("Location: /library-mvc/books");
+    exit;
     }
 }

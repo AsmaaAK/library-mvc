@@ -1,4 +1,8 @@
 <?php 
+namespace App\Core;
+
+use PDO;
+
 final class App {
     private static ?PDO $pdo = null;
 

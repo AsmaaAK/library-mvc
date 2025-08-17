@@ -1,4 +1,10 @@
 <?php
+namespace App\Models;
+
+use App\Core\App;
+use App\Traits\LoggingTrait;
+use App\Traits\SearchableTrait;
+
 class Book {
     use LoggingTrait, SearchableTrait;
 

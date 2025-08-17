@@ -8,15 +8,14 @@ class UserController {
     $user = new User();
     $users = $user->all();
     
-    $data = ['users' => $users]; // نمرر البيانات كمصفوفة
-    extract($data); // تحويل المفاتيح إلى متغيرات
-    
+    $data = ['users' => $users]; 
+    extract($data); 
     require __DIR__.'/../Views/users/index.php';
         // require 'App/Views/users/index.php';
     }
 
     function create(){
-        require __DIR__.'/../views/users/create.php';
+        require __DIR__.'/../Views/users/create.php';
     }
 
     function store(){
