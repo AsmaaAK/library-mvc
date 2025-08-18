@@ -114,8 +114,8 @@ table tbody tr:hover {
 <div class="d-flex justify-content-between mb-4" style="display:flex; justify-content:space-between; margin-bottom:20px;">
     <h1>Books</h1>
     <div class="button-group">
-        <a href="/library-mvc/books/create" class="btn-primary">Add New Book</a>
-        <a href="/library-mvc/books/search" class="btn-secondary">Search Books</a>
+        <a href="/library-mvc/public/books/create" class="btn-primary">Add New Book</a>
+        <a href="/library-mvc/public/books/search" class="btn-secondary">Search Books</a>
     </div>
 </div>
 

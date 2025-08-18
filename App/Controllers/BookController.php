@@ -1,6 +1,6 @@
 <?php
 namespace App\Controllers;
-
+use App\Core\LoggerFactory;
 use App\Models\Book;
 class BookController {
     function index(){
@@ -19,6 +19,14 @@ class BookController {
     function store(){
         $book = new Book();
         $book->create($_POST['title'],$_POST['author'],$_POST['copies']);
+        try {
+    $logger = LoggerFactory::createLogger('file');
+    $logger->log("book added  successfully.");
+
+    echo "Logs have been written successfully!";
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
         $this->index();
     }
 

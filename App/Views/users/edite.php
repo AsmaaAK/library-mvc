@@ -1,7 +1,98 @@
-<h1>Edit User</h1>
-<form method="post" action="/users/update">
-    <input type="hidden" name="id" value="<?= $single['id'] ?>">
-    <input name="name" value="<?= htmlspecialchars($single['name']) ?>" required>
-    <input name="email" value="<?= htmlspecialchars($single['email']) ?>" type="email" required>
-    <button>Update</button>
-</form>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit User</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* العنوان */
+        .page-title {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        /* الفورم */
+        .user-form {
+            width: 400px;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: #333;
+        }
+
+        .user-form input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .user-form input:focus {
+            border-color: #4CAF50;
+            outline: none;
+        }
+
+        /* زر التحديث */
+        .btn-update {
+            background-color: #2196F3;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn-update:hover {
+            background-color: #1976D2;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 class="page-title">Edit User</h1>
+
+    <form method="post" action="/users/update" class="user-form">
+        <input type="hidden" name="id" value="<?= $single['id'] ?>">
+
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input id="name" name="name" 
+                   value="<?= htmlspecialchars($single['name']) ?>" required>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input id="email" name="email" 
+                   value="<?= htmlspecialchars($single['email']) ?>" 
+                   type="email" required>
+        </div>
+
+        <button class="btn-update">Update</button>
+    </form>
+
+</body>
+</html>

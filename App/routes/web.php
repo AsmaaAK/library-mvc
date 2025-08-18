@@ -8,9 +8,9 @@ use App\Core\Router;
 
 // use App\Core\Router;
 $router = new Router();
-$router->get('/library-mvc/books',[BookController::class,'index']);
-$router->get('/library-mvc/books/create',[BookController::class,'create']);
-$router->post('/library-mvc/books',[BookController::class,'store']);
+$router->get('/library-mvc/public/books',[BookController::class,'index']);
+$router->get('/library-mvc/public/books/create',[BookController::class,'create']);
+$router->post('/library-mvc/public/books',[BookController::class,'store']);
 $router->get('/library-mvc/books/edit/{id}',[BookController::class,'edit']);
 $router->post('/library-mvc/books/update',[BookController::class,'update']);
 $router->post('/library-mvc/books/delete',[BookController::class,'delete']);

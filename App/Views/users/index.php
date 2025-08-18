@@ -1,7 +1,7 @@
 <h1 style="text-align:center; color:#333; font-family:Arial, sans-serif;">Users</h1>
 
 <div style="width:90%; margin:20px auto; text-align:right;">
-    <a href="/users/create" style="
+    <a href="/library-mvc/public/users/create" style="
         background-color:#4CAF50; 
         color:white; 
         padding:10px 20px; 
