@@ -1,16 +1,29 @@
 <?php
 namespace App\Controllers;
 use App\Core\LoggerFactory;
+use App\Core\NotificationCenter;
 use App\Models\Book;
+use App\Core\QueryBuilder;
+use App\Core\App;
 class BookController {
-    function index(){
-    $book = new Book();
-    $books = $book->all();
+   function index() {
+    $query = (new QueryBuilder())
+        ->table("books")
+        ->select(["id", "title", "author", "copies_available"])
+        ->where("id", "=", "2")
+        ->orderBy("created_at", "DESC")
+        ->limit(5)
+        ->getSQL();
+
     
-    $data = ['books' => $books]; 
+    $stmt = App::db()->query($query);
+    $books = $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+  $data = ['books' => $books]; 
     extract($data); 
         require __DIR__.'/../Views/books/index.php';
     }
+
 
     function create(){
         require __DIR__.'/../Views/books/create.php';
@@ -22,8 +35,6 @@ class BookController {
         try {
     $logger = LoggerFactory::createLogger('file');
     $logger->log("book added  successfully.");
-
-    echo "Logs have been written successfully!";
 } catch (Exception $e) {
     echo "Error: " . $e->getMessage();
 }
